@@ -48,7 +48,7 @@ const Home = ({ characters }) => {
           <Students characters={triBruxos}></Students>
         </div>
        
-<h6>Obs: Se não encontrar os bruxos é por quê nenhum foi merecedor! Tente novamente!</h6>
+<h6>Se não encontrar os bruxos é por quê nenhum foi digno! Tente novamente!</h6>
       </div>
     </>
   );
