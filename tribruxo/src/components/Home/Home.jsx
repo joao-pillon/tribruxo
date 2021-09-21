@@ -6,6 +6,8 @@ const Home = ({ characters }) => {
   const [triBruxos, setTriBruxos] = useState([]);
 
   function handleClick() {
+    
+    
     setTriBruxos([]);
     const random = [];
     const house = [];
@@ -16,7 +18,6 @@ const Home = ({ characters }) => {
     random.push(random1);
     const selected1 = characters[random1];
     house.push(selected1.house);
-
     if (
       !random.includes(random2) &&
       !house.includes(characters[random2].house)
@@ -24,14 +25,20 @@ const Home = ({ characters }) => {
       random.push(random2);
       const selected2 = characters[random2];
       house.push(selected2.house);
+     
       if (
         !random.includes(random3) &&
         !house.includes(characters[random3].house)
       ) {
+
         const selected3 = characters[random3];
         setTriBruxos([selected1, selected2, selected3]);
+        console.log("1")
+        console.log(triBruxos)
       }
-    } else console.log("tryagain");
+    else handleClick();
+    }
+    else handleClick();
   }
 
   return (
@@ -47,8 +54,6 @@ const Home = ({ characters }) => {
         <div className="render">
           <Students characters={triBruxos}></Students>
         </div>
-       
-<h6>Se não encontrar os bruxos é por quê nenhum foi digno! Tente novamente!</h6>
       </div>
     </>
   );
